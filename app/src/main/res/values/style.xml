@@ -11,17 +11,68 @@
 
 <resources>
 
-    <style name="MyCustomDatePicker" parent="ThemeOverlay.Material3.MaterialCalendar">
+    <!-- funcionou mais o tema esta escuro, sem overlay e formato de alguns elementos está distorcido  -->
+    <style name="MyCustomDatePicker" parent="Theme.MaterialComponents.NoActionBar">
+    </style>
+
+    <!-- funcionou mais o tema esta branco, sem overlay e formato de alguns elementos está distorcido  -->
+    <style name="MyCustomDatePicker2" parent="Theme.MaterialComponents.Light.NoActionBar"/>
+
+    <!-- gerou crash  -->
+    <style name="MyCustomDatePicker3" parent="Base.Theme.MaterialComponents.Light.Bridge"/>
+
+    <!--
+
+    java.lang.IllegalArgumentException: com.google.android.material.datepicker.MaterialCalendar requires a value for the br.com.datapikercustom:attr/materialCalendarStyle attribute to be set in your app theme. You can either set the attribute in your theme or update your theme to inherit from Theme.MaterialComponents (or a descendant).
+
+    -->
+
+    <style name="MyCustomDatePicker4" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Cor de fundo do DatePicker -->
+        <item name="android:windowBackground">@color/white</item>
+
+        <!-- Cor e estilo do título -->
+        <item name="materialCalendarHeaderTitle">@style/CustomDatePickerTitle</item>
+
+        <!-- Estilo do calendário -->
         <item name="materialCalendarStyle">@style/CustomCalendar</item>
+
+        <!-- Estilo dos botões (OK e CANCELAR) -->
         <item name="materialCalendarFullscreenTheme">@style/CustomCalendarFullScreen</item>
-        <item name="colorSurface">?attr/colorOnSurface</item>
     </style>
 
+    <!-- Estilo do Título -->
+    <style name="CustomDatePickerTitle" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+    </style>
+
+    <!-- Personalização do calendário -->
     <style name="CustomCalendar" parent="Widget.Material3.MaterialCalendar">
-        <item name="android:background">?attr/colorSurface</item>
-        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:textColor">@color/black</item>
     </style>
 
+    <!-- Estilo do fundo ao selecionar uma data -->
+    <style name="CustomCalendarDaySelected" parent="Widget.Material3.MaterialCalendar.Day.Selected">
+        <item name="android:backgroundTint">@color/yellow</item>
+        <item name="shapeAppearance">@style/CustomCalendarDayShape</item>
+    </style>
+
+    <!-- Ajuste da borda do fundo da data selecionada --> ShapeAppearance.Material3.ExtraLargeComponent
+    <style name="CustomCalendarDayShape" parent="ShapeAppearance.Material3.Corner.ExtraLarge">
+        <item name="cornerSize">50%</item> <!-- Garante um círculo perfeito -->
+    </style>
+
+    <!-- Personalização da borda do calendário -->
+    <style name="CustomCalendarShape" parent="ShapeAppearance.Material3.MediumComponent">
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <!-- Estilo da Tela Cheia -->
     <style name="CustomCalendarFullScreen" parent="Theme.Material3.Light">
         <item name="android:windowBackground">@color/white</item>
     </style>

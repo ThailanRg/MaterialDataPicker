@@ -79,7 +79,7 @@ class MaterialDataPiker : AppCompatActivity() {
         val datePicker =
             MaterialDatePicker.Builder.datePicker()
                 .setTitleText("Selecione uma Quinta-feira")
-                .setTheme(R.style.MyCustomDatePicker)
+                .setTheme(R.style.MyCustomDatePicker4)
                 .setCalendarConstraints(constraints)
                 .build()
 
