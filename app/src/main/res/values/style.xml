@@ -1,0 +1,28 @@
+<!--<resources xmlns:tools="http://schemas.android.com/tools">-->
+<!--    &lt;!&ndash; Base application theme. &ndash;&gt;-->
+<!--    <style name="Base.Theme.DataPikerCustom" parent="Theme.Material3.DayNight.NoActionBar">-->
+<!--        &lt;!&ndash; Customize your light theme here. &ndash;&gt;-->
+<!--        &lt;!&ndash; <item name="colorPrimary">@color/my_light_primary</item> &ndash;&gt;-->
+<!--    </style>-->
+
+<!--    <style name="Theme.DataPikerCustom" parent="Base.Theme.DataPikerCustom" />-->
+<!--</resources>-->
+
+
+<resources>
+
+    <style name="MyCustomDatePicker" parent="ThemeOverlay.Material3.MaterialCalendar">
+        <item name="materialCalendarStyle">@style/CustomCalendar</item>
+        <item name="materialCalendarFullscreenTheme">@style/CustomCalendarFullScreen</item>
+        <item name="colorSurface">?attr/colorOnSurface</item>
+    </style>
+
+    <style name="CustomCalendar" parent="Widget.Material3.MaterialCalendar">
+        <item name="android:background">?attr/colorSurface</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+
+    <style name="CustomCalendarFullScreen" parent="Theme.Material3.Light">
+        <item name="android:windowBackground">@color/white</item>
+    </style>
+</resources>
